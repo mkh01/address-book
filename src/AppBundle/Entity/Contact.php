@@ -11,7 +11,6 @@ use libphonenumber\PhoneNumber;
  * @package AppBundle\Entity
  * @ORM\Table(name="contact")
  * @ORM\Entity()
- * @Vich\Uploadable
  */
 class Contact
 {

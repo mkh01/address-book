@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class ContactController
- * @package AppBundle\Controller\Contact
+ * @package AppBundle\Controller
  *
  * @Route("/")
  */
@@ -24,7 +24,7 @@ class ContactController extends Controller
      * List all Contacts
      *
      * @Route("/contacts", name="contact_index")
-     * @Template("@AppBundle/Contact/index.html.twig")
+     * @Template("@App/Contact/index.html.twig")
      *
      * @return array
      */
@@ -41,7 +41,7 @@ class ContactController extends Controller
      * Create a new Contact
      *
      * @Route("/contact/create/", name="contact_create")
-     * @Template("@AppBundle/Contact/create.html.twig")
+     * @Template("@App/Contact/create.html.twig")
      *
      * @param Request $request
      * @return RedirectResponse|array
@@ -71,7 +71,7 @@ class ContactController extends Controller
      * Show Contact Details
      *
      * @Route("/contact/show/{id}", name="contact_show")
-     * @Template("@AppBundle/Contact/show.html.twig")
+     * @Template("@App/Contact/show.html.twig")
      *
      * @param Contact $contact
      * @return array
@@ -87,7 +87,7 @@ class ContactController extends Controller
      * Edit Contact
      *
      * @Route("/contact/edit/{id}", name="contact_edit")
-     * @Template("@AppBundle/Contact/edit.html.twig")
+     * @Template("@App/Contact/edit.html.twig")
      *
      * @param Request $request
      * @param Contact $contact
