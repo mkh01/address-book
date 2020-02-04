@@ -14,15 +14,13 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class ContactController
  * @package AppBundle\Controller
- *
- * @Route("/")
  */
 class ContactController extends Controller
 {
     /**
      * List all Contacts
      *
-     * @Route("/contacts", name="contact_index")
+     * @Route("/", name="contact_index")
      * @Template("@App/Contact/index.html.twig")
      *
      * @return array
