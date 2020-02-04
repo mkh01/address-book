@@ -4,11 +4,9 @@
     <div class="col-lg-7 col-md-6 col-sm-12">
         <h2>Contact List</h2>
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Contacts</a></li>
+            <li class="breadcrumb-item"><a href={{ path('contact_index') }}><i class="zmdi zmdi-home"></i> Contacts</a></li>
             <li class="breadcrumb-item">list</li>
         </ul>
-        <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i>
-        </button>
     </div>
     <div class="col-lg-5 col-md-6 col-sm-12">
         <a href="{{ path('contact_create') }}" title="create" class="btn btn-success btn-icon float-right">
@@ -35,24 +33,12 @@
                 <tbody>
                 {% for contact in contacts %}
                     <tr>
-                        <td>
-                            {{ contact.id }}
-                        </td>
-                        <td>
-                            <a>{{ contact.firstName }}</a>
-                        </td>
-                        <td>
-                            <a>{{ contact.lastName }}</a>
-                        </td>
-                        <td>
-                            <a>{{ contact.phoneNumber|phone_number_format }}</a>
-                        </td>
-                        <td>
-                            <a>{{ contact.email }}</a>
-                        </td>
-                        <td>
-                            <a>{{ contact.country }}</a>
-                        </td>
+                        <td>{{ contact.id }}</td>
+                        <td>{{ contact.firstName }}</td>
+                        <td>{{ contact.lastName }}</td>
+                        <td>{{ contact.phoneNumber|phone_number_format }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.country }}</td>
                         <td>
                             <a href="{{ path('contact_edit', {'id': contact.id} ) }}" title="edit"
                                class="btn btn-primary btn-sm">
