@@ -5,6 +5,8 @@ namespace AppBundle\Entity;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use libphonenumber\PhoneNumber;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use DateTime;
 
 /**
  * Class Contact
@@ -40,7 +42,7 @@ class Contact
     private $lastName;
 
     /**
-     * @var DateTimeInterface $birthday
+     * @var DateTime $birthday
      *
      * @ORM\Column(type="date", nullable=true)
      *
@@ -147,7 +149,7 @@ class Contact
     }
 
     /**
-     * @return DateTimeInterface
+     * @return DateTime
      */
     public function getBirthday()
     {
@@ -155,9 +157,9 @@ class Contact
     }
 
     /**
-     * @param DateTimeInterface $birthday
+     * @param DateTime $birthday
      */
-    public function setBirthday(DateTimeInterface $birthday = null)
+    public function setBirthday(DateTime $birthday = null)
     {
         $this->birthday = $birthday;
     }

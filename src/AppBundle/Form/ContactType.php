@@ -3,11 +3,11 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Contact;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Misd\PhoneNumberBundle\Form\Type\PhoneNumberType;
 use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -47,12 +47,14 @@ class ContactType extends AbstractType
 
         $builder->add(
             'birthday',
-            BirthdayType::class,
+            DateType::class,
             [
                 'label' => 'contact.entity.birthday',
+                'widget' => 'single_text',
+                'required' => false,
                 'attr' => [
-                    'class' => 'form-control'
-                ]
+                    'class' => ' form-control date'
+                ],
             ]
         );
 
@@ -113,6 +115,7 @@ class ContactType extends AbstractType
 
         $builder->add('phoneNumber', PhoneNumberType::class, [
             'label' => 'contact.entity.phoneNumber',
+            'required' => true,
             'constraints' => [
                 new NotBlank(),
                 new PhoneNumber()
