@@ -3,7 +3,6 @@
 
 namespace AppBundle\Controller;
 
-
 use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -68,22 +67,6 @@ class ContactController extends Controller
     }
 
     /**
-     * Show Contact Details
-     *
-     * @Route("/contact/show/{id}", name="contact_show")
-     * @Template("@App/Contact/show.html.twig")
-     *
-     * @param Contact $contact
-     * @return array
-     */
-    public function showAction(Contact $contact): array
-    {
-        return [
-            'contact' => $contact,
-        ];
-    }
-
-    /**
      * Edit Contact
      *
      * @Route("/contact/edit/{id}", name="contact_edit")
@@ -105,7 +88,7 @@ class ContactController extends Controller
             $this->getDoctrine()->getManager()->flush();
 
 
-            return $this->redirectToRoute('contact_show', ['id' => $contact->getId()]);
+            return $this->redirectToRoute('contact_index', ['id' => $contact->getId()]);
         }
 
         return [
