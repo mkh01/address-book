@@ -20,7 +20,7 @@
     {% endblock head_stylesheets %}
 </head>
 
-<body class="theme-orange right_icon_toggle">
+<body class="theme-blue right_icon_toggle">
 
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
@@ -34,21 +34,21 @@
 
 {% endblock leftsidebar %}
 
-<!-- Content -->
+<!-- Main Content -->
 <section class="content">
-    <div class="block-header">
-        <div class="row">
-            <div class="col-lg-7 col-md-6 col-sm-12">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
                 {% block header %}{% endblock header %}
             </div>
-            <div class="col-xlg-12 col-lg-12 col-md-12 col-sm-12">
-                {% block actions %}{% endblock %}
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    {% block body %}{% endblock %}
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        {% block body %}{% endblock %}
     </div>
 </section>
 
