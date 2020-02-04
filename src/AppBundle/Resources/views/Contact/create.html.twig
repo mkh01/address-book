@@ -53,15 +53,17 @@
                             </div>
                         </div>
 
-                        <div class="row clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-4">
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-3">
-                                <div class="form-group">
-                                    {{ form_errors(form.phoneNumber) }}
+                        {% if form_errors(form.phoneNumber) %}
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-3">
+                                    <div class="form-group">
+                                        {{ form_errors(form.phoneNumber) }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endif %}
 
                         <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
