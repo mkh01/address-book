@@ -2,10 +2,8 @@
 
 namespace AppBundle\Entity;
 
-use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use libphonenumber\PhoneNumber;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use DateTime;
 
 /**

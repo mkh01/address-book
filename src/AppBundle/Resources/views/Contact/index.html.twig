@@ -39,24 +39,25 @@
                 {% for contact in contacts %}
                 <tr>
                     <td>
-                        <a class="single-user-name" href="javascript:void(0);">{{ contact.firstName }} {{ contact.lastName }}</a><br>
+                      {{ contact.id }}
                     </td>
                     <td>
-                        <strong>eCommerce Website</strong><br>
-                        <small>Cost: $215</small>
+                        <a>{{ contact.firstName }}</a>
                     </td>
-                    <td class="hidden-md-down">
-                        <ul class="list-unstyled team-info margin-0">
-                            {#                                            <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>#}
-                        </ul>
+                    <td>
+                        <a>{{ contact.lastName }}</a>
                     </td>
-                    <td class="hidden-md-down">
-                        <div class="progress">
-                            <div class="progress-bar l-blue" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
-                        </div>
+                    <td>
+                        <a>{{ contact.phoneNumber|phone_number_format }}</a>
                     </td>
-                    <td><span class="badge badge-info">Medium</span></td>
-                    <td>25 Dec 2019</td>
+                    <td>
+                        <a>{{ contact.email }}</a>
+                    </td>
+                    <td>
+                        <a>{{ contact.country }}</a>
+                    </td>
+                    <td>
+                    </td>
                 </tr>
                 {% endfor %}
                 </tbody>
