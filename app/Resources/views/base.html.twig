@@ -1,13 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <title>{% block title %}Address book{% endblock %}</title>
+
+    <!-- Css -->
+    {% block head_stylesheets %}
+        <link rel="icon" href="/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+        <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/plugins/charts-c3/plugin.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/plugins/morrisjs/morris.min.css') }}">
+
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{{ asset('/assets/css/style.min.css') }}">
+    {% endblock head_stylesheets %}
+</head>
+
+<body class="theme-orange right_icon_toggle">
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <p>Please wait...</p>
+    </div>
+</div>
+
+<!-- Sidebar -->
+{% block leftsidebar %}
+
+{% endblock leftsidebar %}
+
+<!-- Content -->
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                {% block header %}{% endblock header %}
+            </div>
+            <div class="col-xlg-12 col-lg-12 col-md-12 col-sm-12">
+                {% block actions %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+    </div>
+</section>
+
+<!-- Jquery Core Js -->
+{% block body_javascript %}
+    <script src="{{ asset('/assets/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('/assets/bundles/libscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
+    <script src="{{ asset('/assets/bundles/vendorscripts.bundle.js') }}"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+    <script src="{{ asset('/assets/bundles/jvectormap.bundle.js') }}"></script> <!-- JVectorMap Plugin Js -->
+    <script src="{{ asset('/assets/bundles/sparkline.bundle.js') }}"></script><!-- Sparkline Plugin Js -->
+    <script src="{{ asset('/assets/bundles/c3.bundle.js') }}"></script>
+
+    <script src="{{ asset('/assets/bundles/mainscripts.bundle.js') }}"></script>
+{% endblock body_javascript %}
+</body>
