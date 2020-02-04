@@ -27,6 +27,9 @@ class ContactType extends AbstractType
             [
                 'label' => 'contact.entity.firstName',
                 'required' => true,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
@@ -36,6 +39,9 @@ class ContactType extends AbstractType
             [
                 'label' => 'contact.entity.lastName',
                 'required' => true,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
@@ -44,11 +50,17 @@ class ContactType extends AbstractType
             BirthdayType::class,
             [
                 'label' => 'contact.entity.birthday',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
         $builder->add('email', EmailType::class, [
             'label' => 'contact.entity.mail',
+            'attr' => [
+                'class' => 'form-control'
+            ],
             'constraints' => [
                 new NotBlank(),
                 new Email()
@@ -60,6 +72,9 @@ class ContactType extends AbstractType
             TextType::class,
             [
                 'label' => 'contact.entity.street',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
@@ -68,6 +83,9 @@ class ContactType extends AbstractType
             TextType::class,
             [
                 'label' => 'contact.entity.zip',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
@@ -76,6 +94,9 @@ class ContactType extends AbstractType
             TextType::class,
             [
                 'label' => 'contact.entity.city',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
@@ -84,6 +105,9 @@ class ContactType extends AbstractType
             TextType::class,
             [
                 'label' => 'contact.entity.country',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         );
 
@@ -94,7 +118,7 @@ class ContactType extends AbstractType
                 new PhoneNumber()
             ],
             'attr' => [
-                'description' => 'contact.entity.phoneNumber'
+                'class' => 'form-control'
             ],
         ]);
     }

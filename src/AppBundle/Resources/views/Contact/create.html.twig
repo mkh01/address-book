@@ -1,17 +1,11 @@
 {% extends 'base.html.twig' %}
 
-
 {% block header %}
     <div class="col-lg-7 col-md-6 col-sm-12">
-        <h2>Contact List</h2>
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Contacts</a></li>
-            <li class="breadcrumb-item">list</li>
+            <li class="breadcrumb-item"><a href="{{ path('contact_index') }}"><i class="zmdi zmdi-home"></i> Contacts</a></li>
+            <li class="breadcrumb-item">Create</li>
         </ul>
-        <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
-    </div>
-    <div class="col-lg-5 col-md-6 col-sm-12">
-        <button class="btn btn-success btn-icon float-right" type="button"><i class="zmdi zmdi-plus"></i></button>
     </div>
 {% endblock header %}
 
@@ -23,97 +17,118 @@
                     <h2><strong>Create</strong> Contact</h2>
                 </div>
                 <div class="body">
+                    {{ form_start(form, { 'attr' : { 'class': 'form-material' } }) }}
                     <form class="form-horizontal">
                         <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label for="email_address_2">Email Address</label>
+                                <label>{{ form_label(form.firstName) }}</label>
                             </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
+                            <div class="col-lg-8 col-md-8 col-sm-3">
                                 <div class="form-group">
-                                    <input type="text" id="email_address_2" class="form-control" placeholder="Enter your email address">
+                                    {{ form_widget(form.firstName) }}
                                 </div>
                             </div>
                         </div>
+
                         <div class="row clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
-                                <label for="password_2">Password</label>
+                                <label>{{ form_label(form.lastName) }}</label>
                             </div>
-                            <div class="col-lg-10 col-md-10 col-sm-8">
+                            <div class="col-lg-8 col-md-8 col-sm-3">
                                 <div class="form-group">
-                                    <input type="password" id="password_2" class="form-control" placeholder="Enter your password">
+                                    {{ form_widget(form.lastName) }}
                                 </div>
                             </div>
                         </div>
+
                         <div class="row clearfix">
-                            <div class="col-sm-8 offset-sm-2">
-                                <div class="checkbox">
-                                    <input id="remember_me_2" type="checkbox">
-                                    <label for="remember_me_2">
-                                        Remember Me
-                                    </label>
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.phoneNumber) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.phoneNumber) }}
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.email) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.email) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.birthday) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.birthday) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.street) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.street) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.city) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.city) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.zip) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.zip) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
+                                <label>{{ form_label(form.country) }}</label>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-3">
+                                <div class="form-group">
+                                    {{ form_widget(form.country) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
                             <div class="col-sm-8 offset-sm-2">
-                                <button type="button" class="btn btn-raised btn-primary btn-round waves-effect">LOGIN</button>
+                                <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect">
+                                    Submit
+                                </button>
                             </div>
                         </div>
                     </form>
+                    {{ form_end(form) }}
                 </div>
             </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div class="card">
-        <div class="card-body">
-
-            <h4 class="card-title">{{ 'contact.form.create.title'|trans }}</h4>
-
-            {{ form_start(form, { 'attr' : { 'class': 'form-material' } }) }}
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-12">
-                            {{ form_row(form.firstName) }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                        </div>
-                        <div class="col-md-6">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-
-                </div>
-            </div>
-            {{ form_end(form) }}
         </div>
     </div>
 {% endblock %}
