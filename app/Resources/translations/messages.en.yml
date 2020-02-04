@@ -1,0 +1,11 @@
+contact:
+  entity:
+      firstName: First Name
+      lastName: Last Name
+      phoneNumber: Phone number
+      email: Email
+      birthday: Birthday
+      street: Street
+      city: City
+      zip: Zip
+      country: Country

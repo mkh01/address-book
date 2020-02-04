@@ -59,7 +59,7 @@ class ContactType extends AbstractType
         );
 
         $builder->add('email', EmailType::class, [
-            'label' => 'contact.entity.mail',
+            'label' => 'contact.entity.email',
             'attr' => [
                 'class' => 'form-control'
             ],
